@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <div class="tdesign-demo-item--layout">
+    <t-layout>
+      <t-aside>
+        <siderBar />
+      </t-aside>
+      <t-layout>
+        <t-content>
+          <div>
+            <router-view></router-view>
+          </div>
+        </t-content>
+        <t-footer>Copyright @ 2019-{{ new Date().getFullYear() }} Tencent. All Rights Reserved</t-footer>
+      </t-layout>
+    </t-layout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import siderBar from './components/siderBar.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    siderBar,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  a {
+    text-decoration: none;
+  }
 </style>
