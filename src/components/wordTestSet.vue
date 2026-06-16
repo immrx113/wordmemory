@@ -13,12 +13,22 @@
         <t-list-item>
           <t-list-item-meta title="测试时间" description="时间"></t-list-item-meta>
         </t-list-item>
+        <t-list-item>
+                <t-button block variant="text" shape="square" @click="begintest">开始测试</t-button>
+        </t-list-item>
   </t-list>
 </template>
 
 <script>
 export default {
     name:"wordTestSet",
+    methods:{
+      begintest(){
+        this.$router.push({
+          path:"/wordtest"
+        });
+      }
+    }
 }
 </script>
 

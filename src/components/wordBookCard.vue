@@ -36,6 +36,9 @@ export default {
         
         clickHandler() {
             // 处理按钮点击事件
+            this.$router.push(
+              {path:"/bookchoose"}
+            );
         }
     }
 }

@@ -8,7 +8,7 @@
         </t-space>
         <br />
         <t-space :size="100">
-        <t-button theme="default" variant="base">开始学习</t-button>
+        <t-button theme="default" variant="base" @click="beginStudy">开始学习</t-button>
         <t-button theme="default" variant="base">修改目标</t-button>
         </t-space>
     </div>
@@ -17,6 +17,13 @@
 <script>
 export default {
     name: 'wordHome',
+    methods:{
+        beginStudy(){
+            this.$router.push(
+                {path:"/wordmemory"}
+            )
+        }
+    }
 }
 </script>
 
