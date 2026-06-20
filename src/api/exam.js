@@ -13,10 +13,21 @@ export function getExamRecords() {
   return service({
     url: "/exam/records",
     method: "get",
-    params: {
-      bookId: 1,   
+    params: {  
       page: 1,
       size: 5
+    }
+  });
+}
+
+//提交考试结果
+export function submitExamResult(data) {
+  return service({
+    url: "/exam/submit",
+    method: "post",
+    data: {
+      bookId: data.bookId,
+      score: data.score
     }
   });
 }

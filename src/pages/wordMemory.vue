@@ -52,7 +52,8 @@ export default {
 
     async mark(status) {
       const word = this.currentWord;
-
+      console.log("word是什么",word)
+      //word传参?word是一个对象
       await this.updateWordStatus({
         word,
         status

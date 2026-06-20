@@ -26,6 +26,7 @@ const MemoryOptions={
 		chooseTargetUsers:"四级",
 		chooseBookInfo:"这是一本四级书",
 		chooseBookName:"四级",
+		chooseBookId:1,
 		wordList:[],
 		bookList:[],
 		currentBookId:null,
@@ -123,6 +124,7 @@ const MemoryOptions={
 			state.chooseBookName=obj.bookName
 			state.chooseBookInfo=obj.intro
 			state.chooseTargetUsers=obj.targetUser
+			state.chooseBookId=obj.id
 		}
 	},
 }
@@ -133,7 +135,7 @@ const ExamOptions={
 			cnToEnRatio:50, //中文选英文比例
 			enToCnRatio:50, //英文选中文比例
 			wordCount:20,
-			duration:10 //单位分钟
+			duration:10, //单位分钟
 		},
 		history:[]
 	},

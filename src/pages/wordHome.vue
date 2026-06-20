@@ -68,6 +68,9 @@ export default {
     computed:{
         ...mapState("MemoryAbout",["todayGoalNumber",'alreadyNumber',"notNumber"])
     },
+    //created(){
+    //    
+    //}
     data(){
         return {
             goalDialogVisible:false,

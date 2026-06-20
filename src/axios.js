@@ -43,13 +43,17 @@ service.interceptors.request.use(
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
       //弹出信息
-      this.$message.warning(error.response.msg)
+      //this.$message.warning(error.response.msg)
       // 跳转登录页
       router.push("/login")
     }
     }
-      return Promise.reject(error)
+    if(error.response.code === 500){
+      //弹出信息
+      this.$message.warning(error.response.msg)
     }
+    return Promise.reject(error)
+  }
   )
 
 export default service

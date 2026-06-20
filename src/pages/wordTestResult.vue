@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import {submitExamResult} from "../api/exam"
 export default {
   name: "wordTestResult",
 
@@ -44,11 +46,21 @@ export default {
 
       this.score = Math.round((correct / questions.length) * 100);
     },
+    submitScore(){
+      //bookid存在state里
+      submitExamResult({
+        bookId:this.chooseBookId,
+        score:this.score
+      })
+    },
 
     restart() {
       localStorage.removeItem("exam_state");
       this.$router.push("/main/test");
     }
+  },
+  computed:{
+    ...mapState("MemoryAbout",["chooseBookId"])
   }
 };
 </script>
