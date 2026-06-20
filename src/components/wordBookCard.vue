@@ -5,11 +5,8 @@
         clickHandler是操作按钮的点击事件，后期methods配置
         style固定卡片大小
       -->
-    <t-card :title="title" :bordered="false" hover-shadow :style="{ width: '400px' }">
-      {{ infoMessage }}
-      <div style="width:200px">
-          <t-progress :percentage="50" />
-        </div>
+    <t-card :title="chooseBookName" :bordered="false" hover-shadow :style="{ width: '400px' }">
+      {{ chooseBookInfo+" " +"适用人群"+":" +chooseTargetUsers }}
       <!--
          #actions 具名插槽的简写形式
          style固定样式
@@ -17,29 +14,32 @@
          @click="clickHandler" 绑定点击事件，后期methods配置
        -->
       <template #actions>
-        <a href="javascript:void(0)" @click="clickHandler" style="line-height: 24px">操作</a>
+        <a href="javascript:void(0)" @click="clickHandler" style="line-height: 24px">更换词书</a>
       </template>
     </t-card>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
         name: 'wordBookCard',
         data() {
             return {
-            title: '单词书',
-            infoMessage: '这是一个单词书',
+            //title: '单词书',
+            //infoMessage: '这是一个单词书',
             }
         },
     methods: {
-        
         clickHandler() {
             // 处理按钮点击事件
             this.$router.push(
-              {path:"/bookchoose"}
+              {path:"/main/bookchoose"}
             );
-        }
+        },
+    },
+    computed:{
+      ...mapState("MemoryAbout",["chooseTargetUsers","chooseBookInfo","chooseBookName"])
     }
 }
 </script>
